@@ -1557,6 +1557,37 @@ config SERIAL_LITEUART_CONSOLE
 	  and warnings and which allows logins in single user mode).
 	  Otherwise, say 'N'.
 
+config SERIAL_NO2UART
+	tristate "NitroUART serial port support"
+	depends on HAS_IOMEM
+	depends on OF || COMPILE_TEST
+	select SERIAL_CORE
+	help
+	  This driver is for the FPGA-based NitroUART serial controller from Nitro
+	  SoC.
+
+	  Say 'Y' or 'M' here if you wish to use the NitroUART serial controller.
+	  Otherwise, say 'N'.
+
+config SERIAL_NO2UART_MAX_PORTS
+	int "Maximum number of NitroUART ports"
+	depends on SERIAL_NO2UART
+	default "1"
+	help
+	  Set this to the maximum number of serial ports you want the driver
+	  to support.
+
+config SERIAL_NO2UART_CONSOLE
+	bool "NitroUART serial port console support"
+	depends on SERIAL_NO2UART=y
+	select SERIAL_CORE_CONSOLE
+	help
+	  Say 'Y' or 'M' here if you wish to use the FPGA-based NitroUART serial
+	  controller from a Nitro SoC as the system console
+	  (the system console is the device which receives all kernel messages
+	  and warnings and which allows logins in single user mode).
+	  Otherwise, say 'N'.
+
 endmenu
 
 config SERIAL_MCTRL_GPIO
