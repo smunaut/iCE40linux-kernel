@@ -928,6 +928,12 @@ config LEDS_ACER_A500
 	  This option enables support for the Power Button LED of
 	  Acer Iconia Tab A500.
 
+config LEDS_NO2ICE40_RGB
+	tristate "LED support for iCE40UP LED HardIP with NitroFPGA wrapper"
+	help
+	  This option enables support for the NitroFPGA wrapper found
+	  in no2ice40 for the SB_LEDDA_IP block found in Lattice UltraPlus.
+
 comment "Flash and Torch LED drivers"
 source "drivers/leds/flash/Kconfig"
 
