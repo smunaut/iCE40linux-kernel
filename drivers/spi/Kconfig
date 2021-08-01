@@ -511,6 +511,13 @@ config SPI_MTK_NOR
 	  SPI interface as well as several SPI NOR specific instructions
 	  via SPI MEM interface.
 
+config SPI_NO2SPI_SIMPLE
+	tristate "NitroSPI Simple SPI master driver"
+	depends on OF
+	help
+	  This enables support for NitroSPI Simple, the basic SPI master
+	  controller of the Nitro FPGA SoC.
+
 config SPI_NPCM_FIU
 	tristate "Nuvoton NPCM FLASH Interface Unit"
 	depends on ARCH_NPCM || COMPILE_TEST
